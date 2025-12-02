@@ -769,18 +769,27 @@
 
 .driver-found-screen {
     display: flex;
-    flex-direction: row;
-    height: 100vh;
-    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: var(--space-4) var(--space-3);
+    gap: var(--space-4);
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .driver-card-top {
-    flex: 1;
+    flex: 0 0 auto;
     background-color: var(--color-surface);
     padding: var(--space-4);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
     z-index: 20;
 }
 
@@ -826,43 +835,23 @@
 }
 
 .map-half {
-    flex: 1;
+    flex: 0 0 auto;
     position: relative;
     background-color: #e5e7eb;
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
 }
 
-/* Driver Found – responsive layout */
+/* Driver Found – tweak map height on smaller screens so details are visible */
 @media (max-width: 768px) {
-    .driver-found-screen {
-        display: flex !important;
-        flex-direction: column !important;
-        height: auto !important;
-        min-height: 100vh !important;
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-        padding: var(--space-3) !important;
-    }
-
     .driver-found-screen .map-half {
-        flex: 0 0 auto !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        height: 40vh !important;
-        min-height: 220px !important;
-        max-height: 320px !important;
-        margin: 0 0 var(--space-3) 0 !important;
-        position: relative !important;
-    }
-
-    .driver-found-screen .driver-card-top {
-        flex: 0 0 auto !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        justify-content: flex-start !important;
-        overflow-y: visible !important;
-        padding: var(--space-3) !important;
-        display: flex !important;
-        flex-direction: column !important;
+        aspect-ratio: auto;
+        height: 200px;
+        max-height: 220px;
     }
 }
 

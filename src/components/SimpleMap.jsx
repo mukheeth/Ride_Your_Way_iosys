@@ -35,7 +35,14 @@ export default function SimpleMap({
     useEffect(() => {
         if (mapRef.current && !mapInstanceRef.current) {
             // Create map
-            mapInstanceRef.current = L.map(mapRef.current).setView(center, zoom);
+            // Make the map mostly static so vertical scroll works everywhere (especially on mobile)
+            mapInstanceRef.current = L.map(mapRef.current, {
+                scrollWheelZoom: false,   // don't zoom on mouse wheel
+                touchZoom: false,         // don't pinch-zoom (allow page scroll)
+                dragging: false,          // don't capture drag (allow page scroll)
+                doubleClickZoom: false,
+                boxZoom: false,
+            }).setView(center, zoom);
 
             // Add tile layer
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

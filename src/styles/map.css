@@ -31,7 +31,10 @@
     min-height: 250px;
 }
 
-/* Driver Found screen: rely on flex and mobile breakpoint for sizing */
+/* Driver Found screen: override min-height so square card works on all screens */
+.driver-found-screen .map-half .leaflet-container {
+    min-height: 0;
+}
 
 /* Ensure map controls are visible */
 .leaflet-control-zoom {

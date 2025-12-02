@@ -1,7 +1,5 @@
-import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
-import SimpleMap from '../../components/SimpleMap';
 
 export default function DriverFoundScreen() {
     const navigate = useNavigate();
@@ -21,16 +19,7 @@ export default function DriverFoundScreen() {
 
     return (
         <section className="screen active driver-found-screen">
-            {/* Map Section */}
-            <div className="map-half">
-                <SimpleMap
-                    center={pickupCoords}
-                    zoom={14}
-                    minHeight={260}
-                />
-            </div>
-
-            {/* Driver Details Section - Takes up 50% width */}
+            {/* Driver Details Section */}
             <div className="driver-card-top">
                 <div className="driver-profile" style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>
                     <div className="avatar" style={{
