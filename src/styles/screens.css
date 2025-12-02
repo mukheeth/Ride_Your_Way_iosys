@@ -834,27 +834,35 @@
 /* Driver Found – responsive layout */
 @media (max-width: 768px) {
     .driver-found-screen {
-        flex-direction: column;
-        height: auto;
-        min-height: 100vh;
-        overflow-x: hidden;
-        overflow-y: auto;
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        padding: var(--space-3) !important;
     }
 
     .driver-found-screen .map-half {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 100%;
-        height: 40vh;
-        min-height: 220px;
-        max-height: 320px;
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 40vh !important;
+        min-height: 220px !important;
+        max-height: 320px !important;
+        margin: 0 0 var(--space-3) 0 !important;
+        position: relative !important;
     }
 
     .driver-found-screen .driver-card-top {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 100%;
-        justify-content: flex-start;
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-content: flex-start !important;
+        overflow-y: visible !important;
+        padding: var(--space-3) !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
 }
 
