@@ -742,50 +742,7 @@
     }
 }
 
-/* Driver Found Screen - Mobile Layout Fix */
-@media (max-width: 480px) {
-    .driver-found-screen {
-        flex-direction: column !important;
-        display: flex !important;
-    }
-
-    .driver-found-screen .map-half {
-        flex: 1 1 50% !important;
-        min-height: 50vh;
-        max-height: 50vh;
-        position: relative;
-    }
-
-    .driver-found-screen .driver-card-top {
-        flex: 1 1 50% !important;
-        min-height: 50vh;
-        max-height: 50vh;
-        overflow-y: auto;
-        padding: var(--space-3) !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
-    }
-
-    .driver-found-screen .driver-profile .avatar {
-        width: 60px !important;
-        height: 60px !important;
-        font-size: 24px !important;
-    }
-
-    .driver-found-screen .pickup-code {
-        padding: var(--space-3) !important;
-        margin-bottom: var(--space-3) !important;
-    }
-
-    .driver-found-screen .code {
-        font-size: 24px !important;
-    }
-
-    .driver-found-screen h3 {
-        font-size: 20px !important;
-    }
-}
+/* Driver Found Screen - Mobile Layout Fix (most tweaks now live in screens.css) */
 
 /* In-Ride Screen Mobile */
 @media (max-width: 480px) {

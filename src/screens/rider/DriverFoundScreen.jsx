@@ -21,11 +21,12 @@ export default function DriverFoundScreen() {
 
     return (
         <section className="screen active driver-found-screen">
-            {/* Map Section - Takes up 50% width */}
+            {/* Map Section */}
             <div className="map-half">
                 <SimpleMap
                     center={pickupCoords}
                     zoom={14}
+                    minHeight={260}
                 />
             </div>
 

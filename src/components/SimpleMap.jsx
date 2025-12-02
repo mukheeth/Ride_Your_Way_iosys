@@ -18,7 +18,8 @@ export default function SimpleMap({
     pickup = null,
     dropoff = null,
     useCarIcon = false,
-    waypoints = null // Array of waypoints for road-following route
+    waypoints = null, // Array of waypoints for road-following route
+    minHeight = 400 // Allow screens to override minimum height
 }) {
     const mapRef = useRef(null);
     const mapInstanceRef = useRef(null);
@@ -379,7 +380,7 @@ export default function SimpleMap({
             style={{
                 width: '100%',
                 height: '100%',
-                minHeight: '400px',
+                minHeight: `${minHeight}px`,
                 background: '#e5e7eb'
             }}
         />

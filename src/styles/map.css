@@ -31,6 +31,8 @@
     min-height: 250px;
 }
 
+/* Driver Found screen: rely on flex and mobile breakpoint for sizing */
+
 /* Ensure map controls are visible */
 .leaflet-control-zoom {
     border: 2px solid rgba(0, 0, 0, 0.2);
