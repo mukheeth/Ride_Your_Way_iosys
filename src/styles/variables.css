@@ -1,0 +1,84 @@
+:root {
+    /* Colors - Primary */
+    --color-primary: #208085;
+    --color-primary-dark: #1a656a;
+    --color-primary-light: #a8d4d8;
+    --color-primary-very-light: #e8f4f5;
+
+    /* Colors - Secondary */
+    --color-secondary: #5e5240;
+    --color-secondary-dark: #3d3529;
+    --color-secondary-light: #c9bdb5;
+
+    /* Colors - Status */
+    --color-success: #22c55e;
+    --color-success-bg: #dcfce7;
+    --color-error: #c01447;
+    --color-error-bg: #fecaca;
+    --color-warning: #a84d2f;
+    --color-warning-bg: #fed7aa;
+    --color-info: #6366f1;
+    --color-info-bg: #e0e7ff;
+
+    /* Colors - Neutral (Light Mode Default) */
+    --color-bg: #fcfcf9;
+    --color-surface: #ffffff;
+    --color-text-primary: #134252;
+    --color-text-secondary: #666666;
+    --color-border: #e5e7eb;
+    --color-divider: #e5e7eb;
+    --color-disabled: #d1d5db;
+
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+
+    /* Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Transitions */
+    --transition-fast: 200ms ease-out;
+    --transition-normal: 300ms ease-out;
+}
+
+/* Dark Mode Overrides */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #1f2121;
+        --color-surface: #2a2d2d;
+        --color-text-primary: #f5f5f5;
+        --color-text-secondary: #b3b3b3;
+        --color-border: #3a3e3e;
+        --color-divider: #3a3e3e;
+    }
+}
+
+/* Manual Dark Mode Class */
+body.dark-mode {
+    --color-bg: #1f2121;
+    --color-surface: #2a2d2d;
+    --color-text-primary: #f5f5f5;
+    --color-text-secondary: #b3b3b3;
+    --color-border: #3a3e3e;
+    --color-divider: #3a3e3e;
+}

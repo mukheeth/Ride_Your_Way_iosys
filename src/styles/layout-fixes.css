@@ -1,0 +1,606 @@
+/* ============================================
+   COMPREHENSIVE LAYOUT FIXES FOR ALL SCREENS
+   Ensures consistent frames and dimensions
+   ============================================ */
+
+/* Note: Base .screen styles are defined in base.css */
+/* This file provides screen-specific container fixes */
+
+/* Standard Container Pattern */
+.screen-container,
+.container,
+.content-container {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Content Wrapper - Standard Padding */
+.content-wrapper,
+.content,
+.main-content {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Panel/Card Containers */
+.panel,
+.card-container,
+.panel-container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   SCREEN-SPECIFIC FIXES
+   ============================================ */
+
+/* Splash Screen */
+#splash-screen,
+.splash-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    padding: var(--space-4);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash-content {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    box-sizing: border-box;
+}
+
+/* Onboarding Screen */
+.onboarding-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.onboarding-container {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.onboarding-slide {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    padding: var(--space-4) var(--space-2);
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.onboarding-slide .slide-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 var(--space-2);
+    box-sizing: border-box;
+}
+
+/* Role Selection Screen */
+.role-selection-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    padding: var(--space-4);
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.role-selection-container {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    box-sizing: border-box;
+}
+
+/* Auth Screen */
+.auth-screen,
+#auth-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    padding: var(--space-4);
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    box-sizing: border-box;
+}
+
+/* Home Screen */
+.home-screen,
+#home-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.home-content {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.booking-panel {
+    width: 100%;
+    max-width: 100vw;
+    padding: var(--space-3) var(--space-4);
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Matching Screen */
+.matching-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.matching-content {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Driver Found Screen */
+.driver-found-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.driver-found-content {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* In Ride Screen */
+.in-ride-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.in-ride-content {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Rating Screen */
+.rating-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    padding: var(--space-4);
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.rating-content {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    box-sizing: border-box;
+}
+
+/* Profile Screen */
+.profile-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.profile-content-modern,
+.driver-profile-content {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    box-sizing: border-box;
+}
+
+/* History Screen */
+.history-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.history-content {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    box-sizing: border-box;
+}
+
+/* Support Screen */
+.support-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.support-content {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    box-sizing: border-box;
+}
+
+/* Driver Registration Screen */
+.driver-registration-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.registration-container {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    box-sizing: border-box;
+}
+
+/* Driver Home Screen */
+.driver-home-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.driver-home-content {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Driver Customers Screen */
+.driver-customers-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.driver-customers-content {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    box-sizing: border-box;
+}
+
+/* Driver Request Screen */
+.driver-request-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.driver-request-content {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Driver Pickup Screen */
+.driver-pickup-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.driver-pickup-content {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Driver Driving Screen */
+.driver-driving-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.driver-driving-content {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Driver Trip Screen */
+.driver-trip-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.driver-trip-content {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Driver Congratulations Screen */
+.driver-congratulations-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    padding: var(--space-4);
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.congratulations-container {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    box-sizing: border-box;
+}
+
+/* Driver Earnings Screen */
+.driver-earnings-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.driver-earnings-content {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    box-sizing: border-box;
+}
+
+/* Driver History Screen */
+.driver-history-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.driver-history-content {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    box-sizing: border-box;
+}
+
+/* Driver Support Screen */
+.driver-support-screen {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.driver-support-content {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-4);
+    box-sizing: border-box;
+}
+
+/* ============================================
+   MAP CONTAINERS
+   ============================================ */
+
+.driver-map-container,
+.map-container,
+.map-wrapper {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ============================================
+   PANEL/CARD FIXES
+   ============================================ */
+
+.driver-bottom-panel,
+.bottom-panel,
+.bottom-panel-container {
+    width: 100%;
+    max-width: 100vw;
+    padding: var(--space-4);
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.driver-top-nav,
+.top-nav,
+.top-nav-container {
+    width: 100%;
+    max-width: 100vw;
+    padding: var(--space-3) var(--space-4);
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE FIXES
+   ============================================ */
+
+@media (max-width: 480px) {
+    /* Ensure all containers respect viewport */
+    .screen,
+    .screen-container,
+    .container,
+    .content-container {
+        width: 100vw;
+        max-width: 100vw;
+        left: 0;
+        right: 0;
+    }
+
+    /* Standardize padding on mobile */
+    .content-wrapper,
+    .content,
+    .main-content {
+        padding: var(--space-3);
+    }
+
+    /* Prevent horizontal overflow */
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Fix for all nested containers */
+    .screen > *,
+    .screen > div,
+    .screen > section,
+    .screen > main,
+    .screen > header {
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 375px) {
+    .content-wrapper,
+    .content,
+    .main-content {
+        padding: var(--space-2);
+    }
+}
+
+@media (max-width: 320px) {
+    .content-wrapper,
+    .content,
+    .main-content {
+        padding: var(--space-1);
+    }
+}
+
+/* ============================================
+   DESKTOP PREVIEW FIXES
+   ============================================ */
+
+@media (min-width: 481px) {
+    /* Ensure desktop preview maintains 480px width */
+    .screen,
+    .screen-container,
+    .container {
+        max-width: 480px;
+    }
+}
+
+/* ============================================
+   SAFE AREA INSETS (iOS)
+   ============================================ */
+
+@supports (padding: max(0px)) {
+    .screen {
+        padding-left: max(var(--space-4), env(safe-area-inset-left));
+        padding-right: max(var(--space-4), env(safe-area-inset-right));
+    }
+
+    .bottom-panel,
+    .driver-bottom-panel {
+        padding-bottom: max(var(--space-4), env(safe-area-inset-bottom));
+    }
+
+    .top-nav,
+    .driver-top-nav {
+        padding-top: max(var(--space-3), env(safe-area-inset-top));
+    }
+}
+

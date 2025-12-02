@@ -1,0 +1,209 @@
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: #1f2121;
+    /* Dark background for desktop view to match dark mode feel or neutral */
+    color: var(--color-text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    font-size: 16px;
+    /* Base size */
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    /* Mobile Constraint Layout */
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, #2c3e50, #000000);
+    /* Premium dark background */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+}
+
+h1 {
+    font-size: 48px;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 36px;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+p {
+    margin-bottom: var(--space-4);
+    color: var(--color-text-secondary);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+ul {
+    list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.mt-4 {
+    margin-top: var(--space-4);
+}
+
+.mb-4 {
+    margin-bottom: var(--space-4);
+}
+
+/* Screen Container */
+#root {
+    width: 100%;
+    max-width: 100vw;
+    height: 100vh;
+    height: -webkit-fill-available; /* iOS Safari fix */
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    overflow-x: hidden;
+    background-color: var(--color-bg);
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Desktop wrapper for mobile app preview */
+@media (min-width: 481px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    #root {
+        max-width: 480px;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        border-radius: 0;
+    }
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100vw;
+    height: 100vh;
+    height: -webkit-fill-available; /* iOS Safari fix */
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: opacity var(--transition-normal);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    box-sizing: border-box;
+}
+
+.screen.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 10;
+}
+
+/* Ensure all screen content fits within frame */
+.screen > * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Prevent any content from breaking out of frame */
+.screen * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Standard container pattern for screen content */
+.screen > section,
+.screen > div:first-child {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}

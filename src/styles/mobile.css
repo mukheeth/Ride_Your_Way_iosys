@@ -1,0 +1,1184 @@
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   Mobile-first approach for all screens
+   ============================================ */
+
+/* Base Mobile Styles */
+@media (max-width: 480px) {
+    /* Typography Scaling */
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    /* App Container */
+    #root {
+        width: 100%;
+        max-width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    /* Prevent horizontal scrolling globally */
+    body, html {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    /* Screen adjustments */
+    .screen {
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+        height: 100vh;
+        max-width: 100%;
+    }
+
+    /* Touch-friendly buttons */
+    .btn {
+        min-height: 48px;
+        font-size: 16px;
+        padding: var(--space-3) var(--space-4);
+    }
+
+    .btn-lg {
+        min-height: 52px;
+        font-size: 18px;
+    }
+
+    /* Input fields */
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    select {
+        font-size: 16px; /* Prevents zoom on iOS */
+        min-height: 48px;
+    }
+
+    /* Cards and panels */
+    .card,
+    .driver-bottom-panel,
+    .request-card-overlay {
+        padding: var(--space-4);
+    }
+
+    /* Map containers */
+    .driver-map-container,
+    .map-container,
+    .map-full,
+    .map-half {
+        height: 100%;
+        min-height: 300px;
+    }
+}
+
+/* Small Mobile Devices (320px - 375px) */
+@media (max-width: 375px) {
+    :root {
+        --space-1: 3px;
+        --space-2: 6px;
+        --space-3: 10px;
+        --space-4: 14px;
+        --space-5: 18px;
+        --space-6: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    /* Compact spacing */
+    .driver-stats-grid,
+    .trip-stats-card,
+    .earnings-stats {
+        padding: var(--space-3);
+        gap: var(--space-2);
+    }
+
+    .stat-value,
+    .stat-value-large {
+        font-size: 18px;
+    }
+
+    /* Smaller avatars on mobile */
+    .driver-avatar-large-profile,
+    .rider-avatar-large {
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+    }
+
+    .avatar-sm-modern,
+    .customer-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+/* Medium Mobile Devices (376px - 480px) */
+@media (min-width: 376px) and (max-width: 480px) {
+    .driver-stats-grid {
+        padding: var(--space-4);
+    }
+}
+
+/* Landscape Mobile Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+    .screen {
+        overflow-y: auto;
+    }
+
+    .driver-header-overlay {
+        padding: var(--space-2) var(--space-4);
+    }
+
+    .driver-bottom-panel {
+        padding: var(--space-3) var(--space-4);
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+
+    .customers-list-panel {
+        max-height: 60vh;
+    }
+
+    .request-card-overlay {
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    button,
+    .btn,
+    .menu-item-modern,
+    .menu-item-driver,
+    .customer-card {
+        min-height: 48px;
+        min-width: 48px;
+    }
+
+    /* Remove hover effects, use active instead */
+    .btn:hover,
+    .customer-card:hover {
+        transform: none;
+    }
+
+    .btn:active {
+        transform: scale(0.98);
+        opacity: 0.8;
+    }
+
+    /* Better tap feedback */
+    .customer-card:active,
+    .menu-item-modern:active,
+    .menu-item-driver:active {
+        background: var(--color-primary-very-light);
+        transform: scale(0.98);
+    }
+
+    /* Scrollable areas */
+    .customers-list,
+    .transactions-list,
+    .trip-history-list,
+    .faq-list-driver {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Safe Area Insets for Notched Devices */
+@supports (padding: max(0px)) {
+    .screen {
+        padding-left: max(var(--space-4), env(safe-area-inset-left));
+        padding-right: max(var(--space-4), env(safe-area-inset-right));
+    }
+
+    .driver-header-overlay {
+        padding-top: max(var(--space-4), env(safe-area-inset-top));
+    }
+
+    .driver-bottom-panel,
+    .customers-list-panel,
+    .request-card-overlay {
+        padding-bottom: max(var(--space-4), env(safe-area-inset-bottom));
+    }
+}
+
+/* Rider Screen Mobile Optimizations */
+@media (max-width: 480px) {
+    /* Home Screen */
+    .home-header {
+        padding: var(--space-2) var(--space-3);
+    }
+
+    .pricing-tabs {
+        padding: 0 var(--space-3);
+        gap: var(--space-2);
+    }
+
+    .tab {
+        min-width: 70px;
+        padding: var(--space-2);
+    }
+
+    .tab .text {
+        font-size: 11px;
+    }
+
+    .booking-panel {
+        padding: var(--space-3);
+    }
+
+    .ride-types-scroll {
+        gap: var(--space-2);
+        padding-bottom: var(--space-3);
+    }
+
+    .ride-card {
+        min-width: 70px;
+        height: 70px;
+    }
+
+    .location-inputs {
+        padding: var(--space-2);
+    }
+
+    .input-row {
+        padding: var(--space-2);
+    }
+
+    /* Matching Screen */
+    .bottom-sheet {
+        padding: var(--space-3);
+        max-height: 50vh;
+    }
+
+    /* Driver Found Screen */
+    .driver-card-top {
+        padding: var(--space-3);
+    }
+
+    .driver-profile .avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    /* Rating Screen */
+    .rating-content-modern {
+        padding: var(--space-3);
+    }
+
+    .trip-summary-card-modern {
+        padding: var(--space-4);
+    }
+
+    .payment-methods-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-2);
+    }
+
+    .stars-large-modern {
+        gap: var(--space-1);
+    }
+
+    .star-icon {
+        font-size: 32px;
+    }
+
+    /* Profile Screen */
+    .profile-header-modern {
+        padding: var(--space-4) var(--space-3) var(--space-8);
+    }
+
+    .profile-stats-card {
+        margin: -30px var(--space-3) var(--space-3);
+        padding: var(--space-3);
+    }
+
+    .stat-number {
+        font-size: 16px;
+    }
+
+    .stat-title {
+        font-size: 11px;
+    }
+}
+
+/* Driver Screen Mobile Optimizations */
+@media (max-width: 480px) {
+    /* Driver Home */
+    .driver-header-overlay {
+        padding: var(--space-3);
+    }
+
+    .driver-profile-pill {
+        padding: 3px 10px 3px 3px;
+    }
+
+    .driver-avatar-small {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .earnings-amount {
+        font-size: 14px;
+    }
+
+    .driver-bottom-panel {
+        padding: var(--space-4) var(--space-3);
+    }
+
+    .driver-stats-grid {
+        padding: var(--space-3);
+        gap: var(--space-2);
+    }
+
+    .stat-value {
+        font-size: 20px;
+    }
+
+    .stat-label {
+        font-size: 11px;
+    }
+
+    /* Driver Customers Screen */
+    .customers-list-panel {
+        max-height: 75vh;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .customers-list-header {
+        padding: var(--space-3);
+    }
+
+    .customers-list {
+        padding: var(--space-3);
+        gap: var(--space-2);
+    }
+
+    .customer-card {
+        padding: var(--space-3);
+    }
+
+    .customer-header {
+        margin-bottom: var(--space-2);
+    }
+
+    .customer-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .customer-fare {
+        font-size: 18px;
+    }
+
+    .customer-route {
+        padding: var(--space-2);
+        margin-bottom: var(--space-2);
+    }
+
+    .customer-meta {
+        gap: var(--space-1);
+        margin-bottom: var(--space-2);
+    }
+
+    .meta-item {
+        font-size: 11px;
+        padding: 2px 6px;
+    }
+
+    /* Driver Request Screen */
+    .request-card-overlay {
+        bottom: var(--space-3);
+        left: var(--space-3);
+        right: var(--space-3);
+        padding: var(--space-3);
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    .request-fare {
+        font-size: 24px;
+    }
+
+    .trip-route-card {
+        padding: var(--space-3);
+        margin-bottom: var(--space-3);
+    }
+
+    .request-actions {
+        gap: var(--space-2);
+    }
+
+    .btn-accept,
+    .btn-decline {
+        padding: var(--space-3);
+        font-size: 15px;
+    }
+
+    /* Driver Pickup/Trip Screens */
+    .driver-top-nav {
+        top: var(--space-3);
+        left: var(--space-3);
+        right: var(--space-3);
+        padding: var(--space-3);
+    }
+
+    .nav-location-name {
+        font-size: 14px;
+    }
+
+    .rider-info-card {
+        padding: var(--space-3);
+        margin-bottom: var(--space-3);
+    }
+
+    .rider-avatar-large {
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+    }
+
+    .rider-name {
+        font-size: 16px;
+    }
+
+    .trip-preview-card,
+    .trip-stats-card {
+        padding: var(--space-3);
+        margin-bottom: var(--space-3);
+    }
+
+    .trip-stat-value {
+        font-size: 18px;
+    }
+
+    /* Driver Profile Screen */
+    .driver-profile-content {
+        padding: var(--space-3);
+    }
+
+    .driver-profile-card {
+        padding: var(--space-4);
+    }
+
+    .driver-avatar-large-profile {
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+    }
+
+    .driver-stats-card {
+        padding: var(--space-4);
+    }
+
+    .driver-info-section {
+        padding: var(--space-4);
+    }
+
+    /* Driver Earnings Screen */
+    .earnings-content {
+        padding: var(--space-3);
+    }
+
+    .period-selector {
+        gap: var(--space-1);
+    }
+
+    .period-btn {
+        padding: var(--space-2) var(--space-3);
+        font-size: 13px;
+    }
+
+    .earnings-summary-card {
+        padding: var(--space-4);
+    }
+
+    .earnings-amount-large {
+        font-size: 28px;
+    }
+
+    .earnings-stats {
+        gap: var(--space-2);
+    }
+
+    /* Driver History Screen */
+    .history-content {
+        padding: var(--space-3);
+    }
+
+    .filter-tabs {
+        gap: var(--space-1);
+    }
+
+    .filter-tab {
+        padding: var(--space-2) var(--space-3);
+        font-size: 13px;
+    }
+
+    .trip-history-item {
+        padding: var(--space-3);
+    }
+
+    /* Driver Support Screen */
+    .support-content {
+        padding: var(--space-3);
+    }
+
+    .quick-actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-2);
+    }
+
+    .topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-2);
+    }
+
+    .topic-card {
+        padding: var(--space-3);
+    }
+
+    /* Driver Registration Screen */
+    .registration-container {
+        padding: var(--space-2);
+    }
+
+    .registration-form {
+        padding: var(--space-4);
+    }
+
+    .input-row-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .map-container-registration {
+        height: 250px;
+    }
+}
+
+/* Extra Small Devices (320px and below) */
+@media (max-width: 320px) {
+    :root {
+        --space-4: 12px;
+        --space-5: 16px;
+        --space-6: 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: var(--space-2) var(--space-3);
+    }
+
+    .onboarding-controls {
+        padding: 0.5rem 0.625rem;
+        padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+        gap: 0.5rem;
+    }
+
+    .onboarding-controls .btn {
+        padding: 0.625rem 0.75rem;
+        font-size: 0.875rem;
+        min-height: 2.5rem;
+        border-radius: 0.5rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .customer-card,
+    .trip-history-item {
+        padding: var(--space-2);
+    }
+
+    .driver-stats-grid {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+
+    .stat-divider-vertical {
+        display: none;
+    }
+
+    .illustration-placeholder {
+        width: 120px;
+        height: 120px;
+        font-size: 40px;
+    }
+
+    .onboarding-slide h2 {
+        font-size: 18px;
+    }
+
+    .onboarding-slide p {
+        font-size: 13px;
+    }
+}
+
+/* Prevent text size adjustment on iOS */
+@media screen and (max-width: 480px) {
+    html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    body {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+}
+
+/* Smooth scrolling on mobile */
+@media (max-width: 480px) {
+    .screen,
+    .customers-list-panel,
+    .request-card-overlay,
+    .driver-bottom-panel {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+    }
+}
+
+/* Fix for iOS Safari address bar */
+@supports (-webkit-touch-callout: none) {
+    .screen {
+        min-height: -webkit-fill-available;
+    }
+
+    #root {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Hide scrollbars but keep functionality */
+@media (max-width: 480px) {
+    .customers-list,
+    .transactions-list,
+    .trip-history-list {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .customers-list::-webkit-scrollbar,
+    .transactions-list::-webkit-scrollbar,
+    .trip-history-list::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+}
+
+/* Optimize animations for mobile */
+@media (max-width: 480px) {
+    * {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    .screen.active {
+        will-change: opacity;
+    }
+}
+
+/* Role Selection Mobile */
+@media (max-width: 480px) {
+    .role-selection-screen {
+        padding: var(--space-3);
+    }
+
+    .role-cards {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+
+    .role-card {
+        padding: var(--space-4);
+    }
+
+    .role-icon {
+        font-size: 48px;
+    }
+
+    .logo-large {
+        width: 80px;
+        height: 80px;
+        font-size: 28px;
+    }
+}
+
+/* Driver Found Screen - Mobile Layout Fix */
+@media (max-width: 480px) {
+    .driver-found-screen {
+        flex-direction: column !important;
+        display: flex !important;
+    }
+
+    .driver-found-screen .map-half {
+        flex: 1 1 50% !important;
+        min-height: 50vh;
+        max-height: 50vh;
+        position: relative;
+    }
+
+    .driver-found-screen .driver-card-top {
+        flex: 1 1 50% !important;
+        min-height: 50vh;
+        max-height: 50vh;
+        overflow-y: auto;
+        padding: var(--space-3) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+    }
+
+    .driver-found-screen .driver-profile .avatar {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 24px !important;
+    }
+
+    .driver-found-screen .pickup-code {
+        padding: var(--space-3) !important;
+        margin-bottom: var(--space-3) !important;
+    }
+
+    .driver-found-screen .code {
+        font-size: 24px !important;
+    }
+
+    .driver-found-screen h3 {
+        font-size: 20px !important;
+    }
+}
+
+/* In-Ride Screen Mobile */
+@media (max-width: 480px) {
+    .in-ride-screen,
+    #in-ride-screen {
+        flex-direction: column !important;
+        display: flex !important;
+        height: 100vh !important;
+        overflow: hidden !important;
+    }
+
+    .in-ride-screen .map-section,
+    #in-ride-screen .map-section {
+        flex: 1 1 60% !important;
+        min-height: 60vh;
+        max-height: 60vh;
+        position: relative;
+    }
+
+    .in-ride-screen .ride-controls-section,
+    #in-ride-screen .ride-controls-section {
+        flex: 1 1 40% !important;
+        min-height: 40vh;
+        max-height: 40vh;
+        overflow-y: auto;
+        padding: var(--space-3) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        background: var(--color-bg) !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+    }
+
+    .in-ride-screen .status-bar-sticky {
+        position: absolute !important;
+        top: var(--space-3) !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 1000 !important;
+        width: 90% !important;
+        max-width: 400px !important;
+    }
+
+    .in-ride-screen .sos-fab {
+        position: absolute !important;
+        bottom: var(--space-4) !important;
+        left: var(--space-4) !important;
+        z-index: 1000 !important;
+    }
+}
+
+/* Onboarding Mobile */
+@media (max-width: 480px) {
+    .onboarding-container {
+        height: 100vh;
+        height: -webkit-fill-available;
+        min-height: 100vh;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    .onboarding-slide {
+        padding: var(--space-5) var(--space-2) 120px;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .onboarding-slide-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 var(--space-2);
+    }
+
+    .onboarding-arrow {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+    }
+
+    .onboarding-arrow svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .illustration-placeholder {
+        width: 140px;
+        height: 140px;
+        max-width: 60%;
+        max-height: 25vh;
+        min-height: 120px;
+        margin-bottom: var(--space-4);
+        margin-top: 0;
+        font-size: 48px;
+        border-radius: var(--radius-xl);
+    }
+
+    .onboarding-slide-content h2,
+    .onboarding-slide h2 {
+        font-size: 22px;
+        margin-bottom: var(--space-3);
+        padding: 0 var(--space-2);
+        line-height: 1.3;
+        font-weight: 700;
+        color: var(--color-text-primary);
+    }
+
+    .onboarding-slide-content p,
+    .onboarding-slide p {
+        font-size: 14px;
+        max-width: 300px;
+        padding: 0 var(--space-2);
+        line-height: 1.5;
+        color: var(--color-text-secondary);
+        margin: 0;
+    }
+
+    .onboarding-controls {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100vw;
+        padding: 0.75rem 1rem;
+        padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+        gap: 0.75rem;
+        background: var(--color-bg);
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+
+    .onboarding-controls .dots {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 0.25rem;
+        box-sizing: border-box;
+    }
+
+    .onboarding-controls .btn {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 0.875rem 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0;
+        box-sizing: border-box;
+        border-radius: 0.75rem;
+        min-height: 3rem;
+        max-height: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        border: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .dots {
+        gap: var(--space-2);
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .dot.active {
+        width: 24px;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 375px) {
+    .onboarding-slide {
+        padding: var(--space-5) var(--space-2) 130px;
+    }
+
+    .onboarding-slide-content {
+        padding: 0 var(--space-1);
+    }
+
+    .illustration-placeholder {
+        width: 140px;
+        height: 140px;
+        font-size: 48px;
+        margin-bottom: var(--space-4);
+    }
+
+    .onboarding-slide-content h2,
+    .onboarding-slide h2 {
+        font-size: 18px;
+    }
+
+    .onboarding-slide-content p,
+    .onboarding-slide p {
+        font-size: 13px;
+        max-width: 260px;
+    }
+
+    .onboarding-arrow {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+
+    .onboarding-arrow svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .onboarding-controls {
+        padding: 0.625rem 0.875rem;
+        padding-bottom: max(0.625rem, env(safe-area-inset-bottom));
+        gap: 0.625rem;
+    }
+
+    .onboarding-controls .btn {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.9375rem;
+        min-height: 2.75rem;
+        border-radius: 0.625rem;
+    }
+}
+
+/* Extra small screens (320px - 360px) */
+@media (min-width: 320px) and (max-width: 360px) {
+    .onboarding-controls {
+        padding: 0.5rem 0.75rem;
+        padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+        gap: 0.5rem;
+    }
+
+    .onboarding-controls .btn {
+        padding: 0.6875rem 0.75rem;
+        font-size: 0.875rem;
+        min-height: 2.5rem;
+        border-radius: 0.5rem;
+        letter-spacing: 0.01em;
+    }
+}
+
+/* Minimum width support (320px+) */
+@media (min-width: 320px) {
+    .onboarding-controls .btn {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Auth Screen Mobile */
+@media (max-width: 480px) {
+    .auth-container {
+        padding: var(--space-4);
+    }
+
+    .auth-header h1 {
+        font-size: 24px;
+    }
+
+    .auth-tabs {
+        gap: var(--space-2);
+    }
+
+    .auth-tab {
+        padding: var(--space-2) var(--space-3);
+        font-size: 14px;
+    }
+
+    .form-group {
+        margin-bottom: var(--space-3);
+    }
+
+    .social-login-btn {
+        padding: var(--space-3);
+    }
+}
+
+/* Home Screen Mobile */
+@media (max-width: 480px) {
+    .home-container {
+        padding: 0;
+    }
+
+    .home-header {
+        padding: var(--space-3);
+    }
+
+    .booking-panel {
+        border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+        margin-top: var(--space-4);
+    }
+
+    .location-inputs {
+        padding: var(--space-3);
+    }
+
+    .saved-places {
+        padding: 0 var(--space-3);
+        margin-bottom: var(--space-3);
+    }
+}
+
+/* Profile Screen Mobile - Menu Items */
+@media (max-width: 480px) {
+    .menu-list-modern,
+    .menu-list-driver {
+        padding: var(--space-2);
+    }
+
+    .menu-item-modern,
+    .menu-item-driver {
+        padding: var(--space-3);
+        margin-bottom: var(--space-2);
+    }
+
+    .menu-item-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .menu-item-text {
+        font-size: 15px;
+    }
+
+    .menu-item-subtext {
+        font-size: 12px;
+    }
+}
+
+/* History Screen Mobile */
+@media (max-width: 480px) {
+    .history-content {
+        padding: var(--space-3);
+    }
+
+    .trip-history-item {
+        padding: var(--space-3);
+        margin-bottom: var(--space-2);
+    }
+
+    .trip-route-info {
+        font-size: 13px;
+    }
+
+    .trip-date {
+        font-size: 11px;
+    }
+}
+
+/* Support Screen Mobile */
+@media (max-width: 480px) {
+    .support-content {
+        padding: var(--space-3);
+    }
+
+    .faq-item {
+        padding: var(--space-3);
+        margin-bottom: var(--space-2);
+    }
+
+    .faq-question {
+        font-size: 14px;
+    }
+
+    .faq-answer {
+        font-size: 13px;
+        padding-top: var(--space-2);
+    }
+}
+

@@ -1,0 +1,329 @@
+/* ============================================
+   SPLASH SCREEN - Premium Mobile Experience
+   ============================================ */
+
+.splash-screen {
+    background: linear-gradient(135deg, #208085 0%, #134252 50%, #0a1f28 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-8) var(--space-6);
+    overflow: hidden;
+    position: relative;
+}
+
+.splash-screen.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+/* Animated Background */
+.splash-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.gradient-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.3;
+    animation: float 8s ease-in-out infinite;
+}
+
+.circle-1 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #a8d4d8, transparent);
+    top: -100px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.circle-2 {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, #208085, transparent);
+    bottom: -80px;
+    right: -80px;
+    animation-delay: 2s;
+}
+
+.circle-3 {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #5e5240, transparent);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 4s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+/* Logo Animation */
+.splash-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    animation: contentFadeIn 1s ease-out;
+}
+
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-animation {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin-bottom: var(--space-8);
+}
+
+.logo-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.ring-1 {
+    width: 180px;
+    height: 180px;
+    animation: pulse-ring 3s ease-out infinite;
+}
+
+.ring-2 {
+    width: 140px;
+    height: 140px;
+    animation: pulse-ring 3s ease-out infinite 1s;
+}
+
+.ring-3 {
+    width: 100px;
+    height: 100px;
+    animation: pulse-ring 3s ease-out infinite 2s;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.logo-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    animation: logo-glow 2s ease-in-out infinite;
+}
+
+@keyframes logo-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 20px rgba(168, 212, 216, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 40px rgba(168, 212, 216, 0.6);
+    }
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    color: #ffffff;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Brand Name */
+.brand-container {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.brand-name {
+    font-size: 42px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: var(--space-3);
+    letter-spacing: 2px;
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.brand-name .word {
+    display: inline-block;
+    animation: word-slide-in 0.6s ease-out backwards;
+}
+
+.word-1 {
+    animation-delay: 0.2s;
+}
+
+.word-2 {
+    animation-delay: 0.4s;
+}
+
+.word-3 {
+    animation-delay: 0.6s;
+}
+
+@keyframes word-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tagline {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    animation: fadeIn 1s ease-out 0.8s backwards;
+}
+
+/* Loading Indicator */
+.loading-container {
+    margin-top: var(--space-10);
+}
+
+.loading-dots {
+    display: flex;
+    gap: var(--space-2);
+    justify-content: center;
+}
+
+.loading-dots .dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: dot-bounce 1.4s ease-in-out infinite;
+}
+
+.loading-dots .dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.loading-dots .dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-dots .dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes dot-bounce {
+
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+
+    30% {
+        transform: translateY(-15px);
+        opacity: 1;
+    }
+}
+
+/* Footer */
+.splash-footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    animation: fadeIn 1s ease-out 1s backwards;
+}
+
+.powered-by {
+    margin-bottom: var(--space-1);
+    font-weight: 500;
+}
+
+.version {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
