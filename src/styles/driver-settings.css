@@ -1,0 +1,305 @@
+/* Driver Settings Screen */
+
+.driver-settings-screen {
+    background-color: var(--color-bg);
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.settings-header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: #fff;
+    padding: var(--space-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+}
+
+.settings-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+.btn-back-header {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: var(--space-2);
+    min-width: 60px;
+}
+
+.settings-content {
+    padding: var(--space-4);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.settings-section {
+    margin-bottom: var(--space-6);
+}
+
+.settings-section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-3);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.settings-card {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    gap: var(--space-3);
+}
+
+.setting-row:last-child {
+    border-bottom: none;
+}
+
+.setting-info {
+    flex: 1;
+}
+
+.setting-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 4px;
+}
+
+.setting-description {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+
+.setting-select {
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    min-width: 120px;
+}
+
+.setting-select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.settings-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+    padding-bottom: var(--space-6);
+}
+
+.btn-save-settings {
+    width: 100%;
+    padding: var(--space-4);
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-save-settings:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-reset-settings {
+    width: 100%;
+    padding: var(--space-3);
+    background-color: transparent;
+    color: var(--color-text-secondary);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-reset-settings:hover {
+    border-color: var(--color-error);
+    color: var(--color-error);
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .settings-content {
+        padding: var(--space-3);
+    }
+
+    .settings-section-title {
+        font-size: 16px;
+    }
+
+    .setting-row {
+        padding: var(--space-3);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+
+    .setting-label {
+        font-size: 14px;
+    }
+
+    .setting-description {
+        font-size: 12px;
+    }
+
+    .toggle-switch,
+    .setting-select {
+        align-self: flex-end;
+    }
+
+    .setting-select {
+        min-width: 100px;
+    }
+}
+
+
+/* Earnings Screen Styles */
+.period-selector {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    background-color: var(--color-surface);
+    padding: 4px;
+    border-radius: 12px;
+}
+
+.period-btn {
+    flex: 1;
+    padding: 12px;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.period-btn.active {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.earnings-summary-card {
+    background-color: var(--color-surface);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 24px;
+}
+
+.earnings-amount-large {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.earnings-label {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-bottom: 24px;
+}
+
+.earnings-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 16px;
+}
+
+.earnings-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.earnings-stat-item .stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.earnings-stat-item .stat-label {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+}
+
+.setting-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.setting-value.positive {
+    color: var(--color-success);
+}
+
+.setting-value.negative {
+    color: var(--color-error);
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .earnings-amount-large {
+        font-size: 28px;
+    }
+
+    .earnings-stats {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .earnings-stat-item .stat-value {
+        font-size: 16px;
+    }
+
+    .period-btn {
+        padding: 10px;
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,380 @@
+/* DRIVER PROFILE FIX - HIGH PRIORITY STYLES */
+/* Force these styles to override everything */
+
+/* Screen Container */
+section.screen.driver-profile-screen {
+    background-color: #f5f5f5 !important;
+    min-height: 100vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Header */
+section.screen.driver-profile-screen .driver-profile-header {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    color: white !important;
+    padding: 16px 16px 80px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+section.screen.driver-profile-screen .driver-profile-header h2 {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: white !important;
+    margin: 0 !important;
+    flex: 1 !important;
+    text-align: center !important;
+}
+
+section.screen.driver-profile-screen .btn-back-white,
+section.screen.driver-profile-screen .btn-edit-white {
+    background: none !important;
+    border: none !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    padding: 8px !important;
+    min-width: 60px !important;
+}
+
+/* Content Container */
+section.screen.driver-profile-screen .driver-profile-content {
+    padding: 0 16px 16px !important;
+    margin-top: -60px !important;
+    position: relative !important;
+    z-index: 10 !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Profile Card */
+section.screen.driver-profile-screen .driver-profile-card {
+    background-color: white !important;
+    border-radius: 16px !important;
+    padding: 32px 16px !important;
+    text-align: center !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+section.screen.driver-profile-screen .driver-avatar-large-profile {
+    width: 100px !important;
+    height: 100px !important;
+    background-color: #10b981 !important;
+    color: white !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 36px !important;
+    font-weight: 700 !important;
+    margin: 0 auto 16px !important;
+    border: 4px solid white !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+section.screen.driver-profile-screen .driver-name-large {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    margin-bottom: 8px !important;
+    color: #1a1a1a !important;
+}
+
+section.screen.driver-profile-screen .driver-email {
+    font-size: 14px !important;
+    color: white !important;
+    margin-bottom: 12px !important;
+    background-color: #10b981 !important;
+    padding: 8px 12px !important;
+    border-radius: 8px !important;
+    display: inline-block !important;
+}
+
+section.screen.driver-profile-screen .driver-rating-badge {
+    display: inline-block !important;
+    background-color: rgba(16, 185, 129, 0.1) !important;
+    color: #10b981 !important;
+    padding: 8px 16px !important;
+    border-radius: 20px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+/* Stats Card */
+section.screen.driver-profile-screen .driver-stats-card {
+    background-color: white !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    margin-bottom: 16px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+section.screen.driver-profile-screen .driver-stat-box {
+    text-align: center !important;
+    flex: 1 !important;
+    padding: 0 8px !important;
+}
+
+section.screen.driver-profile-screen .stat-value-large {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #10b981 !important;
+    margin-bottom: 4px !important;
+    display: block !important;
+}
+
+section.screen.driver-profile-screen .stat-label-small {
+    font-size: 11px !important;
+    color: #666 !important;
+    text-transform: uppercase !important;
+    display: block !important;
+}
+
+section.screen.driver-profile-screen .stat-divider-vertical {
+    width: 1px !important;
+    height: 40px !important;
+    background-color: #e0e0e0 !important;
+}
+
+/* Info Sections */
+section.screen.driver-profile-screen .driver-info-section {
+    background-color: white !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    margin-bottom: 16px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+section.screen.driver-profile-screen .section-title {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+    color: #1a1a1a !important;
+}
+
+section.screen.driver-profile-screen .info-item {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 12px 0 !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+}
+
+section.screen.driver-profile-screen .info-item:last-child {
+    border-bottom: none !important;
+}
+
+section.screen.driver-profile-screen .info-label {
+    font-size: 14px !important;
+    color: #666 !important;
+    flex: 1 !important;
+}
+
+section.screen.driver-profile-screen .info-value {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #1a1a1a !important;
+    text-align: right !important;
+    flex: 1 !important;
+}
+
+/* Vehicle Card */
+section.screen.driver-profile-screen .vehicle-card {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 12px !important;
+    background-color: #f5f5f5 !important;
+    border-radius: 8px !important;
+}
+
+section.screen.driver-profile-screen .vehicle-icon {
+    font-size: 32px !important;
+    flex-shrink: 0 !important;
+}
+
+section.screen.driver-profile-screen .vehicle-details {
+    flex: 1 !important;
+}
+
+section.screen.driver-profile-screen .vehicle-name {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    margin-bottom: 4px !important;
+}
+
+section.screen.driver-profile-screen .vehicle-specs {
+    font-size: 12px !important;
+    color: #666 !important;
+}
+
+section.screen.driver-profile-screen .btn-edit-small {
+    background-color: #10b981 !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 12px !important;
+    border-radius: 8px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+}
+
+/* Menu Section */
+section.screen.driver-profile-screen .driver-menu-section {
+    background-color: white !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    margin-bottom: 16px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+section.screen.driver-profile-screen .menu-item-driver {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 16px !important;
+    background-color: white !important;
+    border: none !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s !important;
+    text-align: left !important;
+    box-sizing: border-box !important;
+}
+
+section.screen.driver-profile-screen .menu-item-driver:last-child {
+    border-bottom: none !important;
+}
+
+section.screen.driver-profile-screen .menu-item-driver:hover {
+    background-color: #f5f5f5 !important;
+}
+
+section.screen.driver-profile-screen .menu-item-driver.highlight {
+    background-color: rgba(32, 128, 133, 0.1) !important;
+}
+
+section.screen.driver-profile-screen .menu-icon {
+    font-size: 24px !important;
+    width: 32px !important;
+    text-align: center !important;
+    flex-shrink: 0 !important;
+}
+
+section.screen.driver-profile-screen .menu-text {
+    flex: 1 !important;
+    text-align: left !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
+
+section.screen.driver-profile-screen .menu-arrow {
+    font-size: 18px !important;
+    color: #666 !important;
+    flex-shrink: 0 !important;
+}
+
+/* Sign Out Button */
+section.screen.driver-profile-screen .btn-signout-driver {
+    width: 100% !important;
+    padding: 16px !important;
+    background-color: transparent !important;
+    border: 2px solid #dc2626 !important;
+    color: #dc2626 !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    transition: all 0.3s !important;
+    box-sizing: border-box !important;
+}
+
+section.screen.driver-profile-screen .btn-signout-driver:hover {
+    background-color: #dc2626 !important;
+    color: white !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    section.screen.driver-profile-screen .driver-profile-header {
+        padding: 12px 12px 70px !important;
+    }
+
+    section.screen.driver-profile-screen .driver-profile-content {
+        padding: 0 12px 12px !important;
+        margin-top: -50px !important;
+    }
+
+    section.screen.driver-profile-screen .driver-profile-card {
+        padding: 16px 12px !important;
+    }
+
+    section.screen.driver-profile-screen .driver-avatar-large-profile {
+        width: 80px !important;
+        height: 80px !important;
+        font-size: 28px !important;
+    }
+
+    section.screen.driver-profile-screen .driver-name-large {
+        font-size: 20px !important;
+    }
+
+    section.screen.driver-profile-screen .driver-stats-card {
+        padding: 12px !important;
+    }
+
+    section.screen.driver-profile-screen .stat-value-large {
+        font-size: 16px !important;
+    }
+
+    section.screen.driver-profile-screen .stat-label-small {
+        font-size: 10px !important;
+    }
+
+    section.screen.driver-profile-screen .info-item {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+    }
+
+    section.screen.driver-profile-screen .info-value {
+        text-align: left !important;
+    }
+
+    section.screen.driver-profile-screen .menu-item-driver {
+        padding: 12px !important;
+    }
+
+    section.screen.driver-profile-screen .menu-icon {
+        font-size: 20px !important;
+        width: 28px !important;
+    }
+
+    section.screen.driver-profile-screen .menu-text {
+        font-size: 14px !important;
+    }
+}

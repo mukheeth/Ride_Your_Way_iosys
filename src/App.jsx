@@ -5,12 +5,15 @@ import './styles/components.css';
 import './styles/screens.css';
 import './styles/role-selection.css';
 import './styles/driver.css';
+import './styles/driver-profile.css';
+import './styles/driver-settings.css';
 import './styles/mobile.css';
 import './styles/mobile-fixes.css';
 import './styles/layout-fixes.css';
 import 'leaflet/dist/leaflet.css';
 import './styles/map.css';
 import './styles/mobile-driver-fix.css';
+import './styles/driver-profile-fix.css';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
 
@@ -43,6 +46,7 @@ import DriverEarningsScreen from './screens/driver/DriverEarningsScreen';
 import DriverHistoryScreen from './screens/driver/DriverHistoryScreen';
 import DriverSupportScreen from './screens/driver/DriverSupportScreen';
 import DriverCustomersScreen from './screens/driver/DriverCustomersScreen';
+import DriverSettingsScreen from './screens/driver/DriverSettingsScreen';
 
 export default function App() {
   return (
@@ -75,6 +79,7 @@ export default function App() {
           <Route path="/driver/trip" element={<DriverTripScreen />} />
           <Route path="/driver/congratulations" element={<DriverCongratulationsScreen />} />
           <Route path="/driver/profile" element={<DriverProfileScreen />} />
+          <Route path="/driver/settings" element={<DriverSettingsScreen />} />
           <Route path="/driver/earnings" element={<DriverEarningsScreen />} />
           <Route path="/driver/history" element={<DriverHistoryScreen />} />
           <Route path="/driver/support" element={<DriverSupportScreen />} />

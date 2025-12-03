@@ -3,60 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function DriverSupportScreen() {
     const navigate = useNavigate();
-    const [searchQuery, setSearchQuery] = useState('');
     const [expandedFaq, setExpandedFaq] = useState(null);
-
-    // Dummy FAQ data
-    const faqs = [
-        {
-            id: 1,
-            category: 'Getting Started',
-            question: 'How do I go online and start receiving rides?',
-            answer: 'Tap the "Go Online" button on your home screen. Make sure your vehicle information and documents are verified. Once online, you\'ll start receiving ride requests from nearby riders.'
-        },
-        {
-            id: 2,
-            category: 'Getting Started',
-            question: 'How do I accept or decline a ride request?',
-            answer: 'When you receive a ride request, you\'ll see the pickup location, destination, and fare. Tap "Accept Ride" to accept or "Decline" to reject. You have 15 seconds to respond.'
-        },
-        {
-            id: 3,
-            category: 'Earnings',
-            question: 'When do I get paid?',
-            answer: 'Earnings are automatically deposited to your registered bank account every week. Payouts are processed every Monday for the previous week\'s earnings.'
-        },
-        {
-            id: 4,
-            category: 'Earnings',
-            question: 'How are fares calculated?',
-            answer: 'Fares are calculated based on distance, time, and the pricing model selected by the rider (Fixed, Negotiate, or Metered). You\'ll see the fare amount before accepting the ride.'
-        },
-        {
-            id: 5,
-            category: 'Technical',
-            question: 'What should I do if the app crashes?',
-            answer: 'Try restarting the app. If the problem persists, check your internet connection and ensure you have the latest app version. Contact support if issues continue.'
-        },
-        {
-            id: 6,
-            category: 'Technical',
-            question: 'How do I update my vehicle information?',
-            answer: 'Go to Profile → Vehicle Information → Edit. Update your vehicle details and submit. Changes may require verification before approval.'
-        },
-        {
-            id: 7,
-            category: 'Safety',
-            question: 'What should I do in case of an emergency?',
-            answer: 'If you feel unsafe, you can cancel the ride and contact support immediately. Use the SOS feature if available. Always prioritize your safety.'
-        },
-        {
-            id: 8,
-            category: 'Account',
-            question: 'How do I update my bank account details?',
-            answer: 'Go to Profile → Earnings & Payments → Edit Payment Details. Update your bank information and verify the changes. It may take 24-48 hours to process.'
-        }
-    ];
 
     const quickActions = [
         { id: 1, icon: '📞', label: 'Call Support', action: () => window.location.href = 'tel:+27111234567' },
@@ -65,158 +12,237 @@ export default function DriverSupportScreen() {
         { id: 4, icon: '📋', label: 'Report Issue', action: () => alert('Report issue feature') }
     ];
 
-    const supportTopics = [
-        { id: 1, icon: '🚗', title: 'Ride Issues', description: 'Problems with rides or passengers' },
-        { id: 2, icon: '💰', title: 'Payment Help', description: 'Questions about earnings and payouts' },
-        { id: 3, icon: '📱', title: 'App Problems', description: 'Technical issues with the app' },
-        { id: 4, icon: '📄', title: 'Documents', description: 'License and vehicle verification' },
-        { id: 5, icon: '⚙️', title: 'Account Settings', description: 'Profile and preferences' },
-        { id: 6, icon: '🆘', title: 'Safety & Emergency', description: 'Safety concerns and emergencies' }
+    const faqs = [
+        {
+            id: 1,
+            question: 'How do I get paid?',
+            answer: 'Earnings are automatically deposited to your bank account weekly. You can also request instant withdrawals for a small fee.'
+        },
+        {
+            id: 2,
+            question: 'What if a rider cancels?',
+            answer: 'If a rider cancels after you\'ve started driving to the pickup location, you\'ll receive a cancellation fee.'
+        },
+        {
+            id: 3,
+            question: 'How is my rating calculated?',
+            answer: 'Your rating is the average of all ratings you\'ve received from riders over your last 500 trips.'
+        },
+        {
+            id: 4,
+            question: 'Can I drive in multiple cities?',
+            answer: 'Yes! Once you\'re approved, you can drive in any city where Ride Your Way operates.'
+        },
+        {
+            id: 5,
+            question: 'What insurance do I need?',
+            answer: 'You need comprehensive insurance that covers ride-sharing. We also provide additional coverage during trips.'
+        },
+        {
+            id: 6,
+            question: 'How do I update my vehicle?',
+            answer: 'Go to Profile → Documents and upload your new vehicle registration and insurance documents.'
+        },
+        {
+            id: 7,
+            question: 'What happens if I get into an accident?',
+            answer: 'Contact support immediately. Our insurance covers you during active trips. Follow the in-app accident reporting process.'
+        },
+        {
+            id: 8,
+            question: 'Can I reject ride requests?',
+            answer: 'Yes, but maintaining a high acceptance rate helps you get more ride requests and bonuses.'
+        }
     ];
 
-    const filteredFaqs = searchQuery
-        ? faqs.filter(faq => 
-            faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            faq.answer.toLowerCase().includes(searchQuery.toLowerCase())
-          )
-        : faqs;
-
-    const toggleFaq = (id) => {
-        setExpandedFaq(expandedFaq === id ? null : id);
-    };
+    const topics = [
+        { id: 1, icon: '💰', title: 'Earnings', subtitle: 'Payment & withdrawals' },
+        { id: 2, icon: '🚗', title: 'Vehicle', subtitle: 'Requirements & updates' },
+        { id: 3, icon: '📄', title: 'Documents', subtitle: 'License & registration' },
+        { id: 4, icon: '⭐', title: 'Ratings', subtitle: 'How ratings work' },
+        { id: 5, icon: '🛡️', title: 'Safety', subtitle: 'Safety features & tips' },
+        { id: 6, icon: '📱', title: 'App Issues', subtitle: 'Technical support' }
+    ];
 
     return (
-        <section className="screen active driver-support-screen">
+        <section className="screen active profile-screen">
             {/* Header */}
-            <div className="driver-screen-header">
-                <button className="btn-back" onClick={() => navigate('/driver/home')}>
-                    ← Back
-                </button>
-                <h2>Help & Support</h2>
-                <div style={{ width: '60px' }}></div>
+            <div style={{
+                background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+                color: 'white',
+                padding: '16px',
+                minHeight: '120px',
+                maxHeight: '120px',
+                display: 'flex',
+                flexDirection: 'column'
+            }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <button 
+                        style={{
+                            background: 'none',
+                            border: 'none',
+                            color: 'white',
+                            fontSize: '24px',
+                            cursor: 'pointer',
+                            padding: '8px',
+                            minWidth: '60px'
+                        }}
+                        onClick={() => navigate('/driver/profile')}
+                    >
+                        ←
+                    </button>
+                    <h2 style={{ color: 'white', margin: 0, flex: 1, textAlign: 'center', fontSize: '20px', fontWeight: 700 }}>
+                        Help & Support
+                    </h2>
+                    <div style={{ width: '60px' }}></div>
+                </div>
             </div>
 
-            <div className="support-content">
+            <div style={{ padding: '20px', marginTop: '-50px', position: 'relative', zIndex: 10 }}>
                 {/* Quick Actions */}
-                <div className="quick-actions-grid">
-                    {quickActions.map(action => (
-                        <button
-                            key={action.id}
-                            className="quick-action-btn"
-                            onClick={action.action}
-                        >
-                            <span className="action-icon">{action.icon}</span>
-                            <span className="action-label">{action.label}</span>
-                        </button>
-                    ))}
-                </div>
-
-                {/* Support Topics */}
-                <div className="support-topics-section">
-                    <h4 className="section-title">Browse by Topic</h4>
-                    <div className="topics-grid">
-                        {supportTopics.map(topic => (
+                <div style={{ marginBottom: '24px' }}>
+                    <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        🚀 Quick Actions
+                    </h3>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>
+                        {quickActions.map((action) => (
                             <button
-                                key={topic.id}
-                                className="topic-card"
-                                onClick={() => {
-                                    setSearchQuery('');
-                                    setExpandedFaq(null);
-                                    // Filter by topic category
+                                key={action.id}
+                                onClick={action.action}
+                                style={{
+                                    padding: '20px',
+                                    backgroundColor: 'white',
+                                    border: '1px solid #e5e7eb',
+                                    borderRadius: '12px',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    gap: '8px',
+                                    cursor: 'pointer',
+                                    transition: 'all 0.2s',
+                                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
                                 }}
                             >
-                                <span className="topic-icon">{topic.icon}</span>
-                                <div className="topic-info">
-                                    <div className="topic-title">{topic.title}</div>
-                                    <div className="topic-desc">{topic.description}</div>
+                                <span style={{ fontSize: '32px' }}>{action.icon}</span>
+                                <span style={{ fontSize: '14px', fontWeight: 600 }}>{action.label}</span>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Browse Topics */}
+                <div style={{ marginBottom: '24px' }}>
+                    <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        📚 Browse Topics
+                    </h3>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>
+                        {topics.map((topic) => (
+                            <button
+                                key={topic.id}
+                                onClick={() => alert(`Opening ${topic.title} help section`)}
+                                style={{
+                                    padding: '16px',
+                                    backgroundColor: 'white',
+                                    border: '1px solid #e5e7eb',
+                                    borderRadius: '12px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '12px',
+                                    cursor: 'pointer',
+                                    textAlign: 'left',
+                                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+                                }}
+                            >
+                                <span style={{ fontSize: '24px' }}>{topic.icon}</span>
+                                <div>
+                                    <div style={{ fontSize: '14px', fontWeight: 600, marginBottom: '2px' }}>
+                                        {topic.title}
+                                    </div>
+                                    <div style={{ fontSize: '11px', color: '#666' }}>
+                                        {topic.subtitle}
+                                    </div>
                                 </div>
                             </button>
                         ))}
                     </div>
                 </div>
 
-                {/* Search */}
-                <div className="search-section">
-                    <div className="search-input-wrapper">
-                        <span className="search-icon">🔍</span>
-                        <input
-                            type="text"
-                            className="search-input"
-                            placeholder="Search for help..."
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                        />
-                        {searchQuery && (
-                            <button
-                                className="clear-search"
-                                onClick={() => setSearchQuery('')}
-                            >
-                                ✕
-                            </button>
-                        )}
+                {/* FAQs */}
+                <div style={{ marginBottom: '24px' }}>
+                    <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        ❓ Frequently Asked Questions
+                    </h3>
+                    <div style={{
+                        backgroundColor: 'white',
+                        borderRadius: '12px',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                        overflow: 'hidden'
+                    }}>
+                        {faqs.map((faq, index) => (
+                            <div key={faq.id} style={{ borderBottom: index < faqs.length - 1 ? '1px solid #e5e7eb' : 'none', padding: '16px' }}>
+                                <button
+                                    onClick={() => setExpandedFaq(expandedFaq === faq.id ? null : faq.id)}
+                                    style={{
+                                        width: '100%',
+                                        display: 'flex',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'center',
+                                        background: 'none',
+                                        border: 'none',
+                                        cursor: 'pointer',
+                                        textAlign: 'left',
+                                        padding: 0
+                                    }}
+                                >
+                                    <span style={{ fontSize: '14px', fontWeight: 600 }}>{faq.question}</span>
+                                    <span style={{ fontSize: '18px' }}>{expandedFaq === faq.id ? '−' : '+'}</span>
+                                </button>
+                                {expandedFaq === faq.id && (
+                                    <div style={{ 
+                                        marginTop: '12px', 
+                                        fontSize: '13px', 
+                                        color: '#666',
+                                        lineHeight: '1.6'
+                                    }}>
+                                        {faq.answer}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
                     </div>
                 </div>
 
-                {/* FAQ Section */}
-                <div className="faq-section">
-                    <h4 className="section-title">
-                        Frequently Asked Questions
-                        {searchQuery && <span className="results-count"> ({filteredFaqs.length} results)</span>}
-                    </h4>
-                    <div className="faq-list-driver">
-                        {filteredFaqs.length === 0 ? (
-                            <div className="empty-state">
-                                <div className="empty-icon">❓</div>
-                                <p>No results found. Try a different search term.</p>
-                            </div>
-                        ) : (
-                            filteredFaqs.map(faq => (
-                                <div key={faq.id} className="faq-item-driver">
-                                    <button
-                                        className="faq-question"
-                                        onClick={() => toggleFaq(faq.id)}
-                                    >
-                                        <span className="faq-category">{faq.category}</span>
-                                        <div className="faq-question-text">{faq.question}</div>
-                                        <span className="faq-toggle">
-                                            {expandedFaq === faq.id ? '−' : '+'}
-                                        </span>
-                                    </button>
-                                    {expandedFaq === faq.id && (
-                                        <div className="faq-answer">
-                                            {faq.answer}
-                                        </div>
-                                    )}
-                                </div>
-                            ))
-                        )}
-                    </div>
-                </div>
-
-                {/* Contact Information */}
-                <div className="contact-info-card">
-                    <h4 className="card-title">Still Need Help?</h4>
-                    <div className="contact-methods">
-                        <div className="contact-method">
-                            <span className="contact-icon">📞</span>
+                {/* Contact Info */}
+                <div style={{ marginBottom: '24px' }}>
+                    <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        📞 Contact Information
+                    </h3>
+                    <div style={{
+                        backgroundColor: 'white',
+                        borderRadius: '12px',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                        overflow: 'hidden'
+                    }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px', borderBottom: '1px solid #e0e0e0' }}>
                             <div>
-                                <div className="contact-label">Phone</div>
-                                <div className="contact-value">+27 11 123 4567</div>
+                                <div style={{ fontSize: '16px', fontWeight: 600, marginBottom: '4px' }}>Phone</div>
+                                <div style={{ fontSize: '13px', color: '#666' }}>24/7 Support</div>
                             </div>
+                            <div style={{ fontSize: '14px', fontWeight: 600 }}>+27 11 123 4567</div>
                         </div>
-                        <div className="contact-method">
-                            <span className="contact-icon">📧</span>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px', borderBottom: '1px solid #e0e0e0' }}>
                             <div>
-                                <div className="contact-label">Email</div>
-                                <div className="contact-value">support@rideyourway.com</div>
+                                <div style={{ fontSize: '16px', fontWeight: 600, marginBottom: '4px' }}>Email</div>
+                                <div style={{ fontSize: '13px', color: '#666' }}>Response within 24h</div>
                             </div>
+                            <div style={{ fontSize: '14px', fontWeight: 600 }}>support@rideyourway.com</div>
                         </div>
-                        <div className="contact-method">
-                            <span className="contact-icon">🕐</span>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px' }}>
                             <div>
-                                <div className="contact-label">Hours</div>
-                                <div className="contact-value">24/7 Support Available</div>
+                                <div style={{ fontSize: '16px', fontWeight: 600, marginBottom: '4px' }}>Hours</div>
+                                <div style={{ fontSize: '13px', color: '#666' }}>Support availability</div>
                             </div>
+                            <div style={{ fontSize: '14px', fontWeight: 600 }}>24/7</div>
                         </div>
                     </div>
                 </div>
@@ -224,4 +250,3 @@ export default function DriverSupportScreen() {
         </section>
     );
 }
-
