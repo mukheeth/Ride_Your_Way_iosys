@@ -941,8 +941,14 @@
     /* Safe area */
 }
 
+/* In-Ride: move the in-progress card lower (above middle of the screen) */
+.in-ride-screen .status-bar-sticky,
+#in-ride-screen .status-bar-sticky {
+    top: 35vh;
+}
+
 .map-large {
-    flex: 1;
+    flex: 1 0 55%;
     background-color: #e5e7eb;
     position: relative;
 }
@@ -2553,8 +2559,8 @@ input:checked+.toggle-slider:before {
 .profile-header-modern {
     background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
     color: white;
-    padding: var(--space-6) var(--space-4) var(--space-12);
-    /* Extra padding bottom for overlap */
+    /* Reduce bottom padding so stats card sits closer under the profile info */
+    padding: var(--space-6) var(--space-4) var(--space-2);
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     position: relative;
@@ -2605,7 +2611,8 @@ input:checked+.toggle-slider:before {
     font-size: 40px;
     font-weight: bold;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    margin-bottom: var(--space-3);
+    /* Slightly tighter gap below avatar */
+    margin-bottom: var(--space-2);
     border: 4px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -2623,7 +2630,8 @@ input:checked+.toggle-slider:before {
 
 .profile-stats-card {
     background: var(--color-surface);
-    margin: -40px var(--space-4) var(--space-4);
+    /* Pull stats card closer to the avatar/name (moderate vertical gap) */
+    margin: -90px var(--space-4) var(--space-4);
     padding: var(--space-4);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);

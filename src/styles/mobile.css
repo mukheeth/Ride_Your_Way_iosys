@@ -313,11 +313,12 @@
 
     /* Profile Screen */
     .profile-header-modern {
-        padding: var(--space-4) var(--space-3) var(--space-8);
+        padding: var(--space-4) var(--space-3) var(--space-6);
     }
 
     .profile-stats-card {
-        margin: -30px var(--space-3) var(--space-3);
+        /* Pull stats card further up on mobile as well */
+        margin: -70px var(--space-3) var(--space-3);
         padding: var(--space-3);
     }
 
@@ -333,6 +334,18 @@
 /* Driver Screen Mobile Optimizations */
 @media (max-width: 480px) {
     /* Driver Home */
+    .driver-home-screen {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .map-large {
+        flex: 0 0 auto;
+        height: 55vh;
+    }
+
     .driver-header-overlay {
         padding: var(--space-3);
     }
