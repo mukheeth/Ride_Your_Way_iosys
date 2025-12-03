@@ -11,7 +11,7 @@ export default function DriverProfileScreen() {
     const driverData = {
         name: 'Thabo Mthembu',
         initials: 'TM',
-        email: 'thabo.mthembu@example.com',
+        email: 'nathi@gmail.com',
         phone: '+27 82 123 4567',
         idNumber: '850101 5800 08 5',
         licenseNumber: 'DL123456789',

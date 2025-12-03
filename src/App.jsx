@@ -4,11 +4,13 @@ import './styles/splash.css';
 import './styles/components.css';
 import './styles/screens.css';
 import './styles/role-selection.css';
+import './styles/driver.css';
 import './styles/mobile.css';
 import './styles/mobile-fixes.css';
 import './styles/layout-fixes.css';
 import 'leaflet/dist/leaflet.css';
 import './styles/map.css';
+import './styles/mobile-driver-fix.css';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
 

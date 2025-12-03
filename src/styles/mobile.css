@@ -343,7 +343,29 @@
 
     .map-large {
         flex: 0 0 auto;
-        height: 55vh;
+        height: 40vh;
+        max-height: 40vh;
+    }
+
+    /* Reduce map height for driver screens with details below */
+    .driver-home-screen .driver-map-container,
+    .driver-pickup-screen .driver-map-container,
+    .driver-driving-screen .driver-map-container,
+    .driver-trip-screen .driver-map-container {
+        height: 40vh !important;
+        max-height: 40vh !important;
+        min-height: 250px !important;
+        flex: 0 0 40vh !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* Ensure leaflet container respects parent height */
+    .driver-home-screen .driver-map-container .leaflet-container,
+    .driver-pickup-screen .driver-map-container .leaflet-container,
+    .driver-driving-screen .driver-map-container .leaflet-container,
+    .driver-trip-screen .driver-map-container .leaflet-container {
+        height: 100% !important;
+        max-height: 40vh !important;
     }
 
     .driver-header-overlay {
@@ -362,6 +384,13 @@
 
     .earnings-amount {
         font-size: 14px;
+    }
+
+    .driver-home-screen .driver-bottom-panel {
+        flex: 1 1 auto !important;
+        overflow-y: auto !important;
+        max-height: 60vh !important;
+        min-height: 0 !important;
     }
 
     .driver-bottom-panel {
@@ -460,6 +489,25 @@
     }
 
     /* Driver Pickup/Trip Screens */
+    .driver-pickup-screen,
+    .driver-driving-screen,
+    .driver-trip-screen {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .driver-pickup-screen .driver-bottom-panel,
+    .driver-driving-screen .driver-bottom-panel,
+    .driver-trip-screen .driver-bottom-panel {
+        flex: 1 1 auto !important;
+        overflow-y: auto !important;
+        max-height: 60vh !important;
+        min-height: 0 !important;
+        padding: var(--space-3);
+    }
+
     .driver-top-nav {
         top: var(--space-3);
         left: var(--space-3);

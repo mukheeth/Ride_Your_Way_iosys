@@ -43,7 +43,7 @@ export default function ProfileScreen() {
 
     const [profileData, setProfileData] = useState({
         name: user.name,
-        email: 'nathi@example.com',
+        email: 'nathi@gmail.com',
         phone: user.phone,
         address: '123 Main St, Sandton'
     });

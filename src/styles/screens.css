@@ -5702,3 +5702,446 @@ input:checked+.toggle-slider:before {
         transform: rotate(360deg);
     }
 }
+
+/* R
+ider Profile Screen - Modern Design */
+.profile-screen {
+    background-color: var(--color-bg);
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+.profile-header-modern {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: #fff;
+    padding: var(--space-4) var(--space-4) var(--space-8);
+    position: relative;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-6);
+}
+
+.back-btn-white,
+.edit-btn-white {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: var(--space-2);
+}
+
+.profile-info-center {
+    text-align: center;
+}
+
+.profile-avatar-large {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 4px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 auto var(--space-4);
+    color: #fff;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.profile-name-large {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+    color: #fff;
+}
+
+.profile-email-large {
+    font-size: 14px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    display: inline-block;
+    backdrop-filter: blur(10px);
+}
+
+.profile-stats-card {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-xl);
+    padding: var(--space-4);
+    margin: -50px var(--space-4) var(--space-4);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 10;
+}
+
+.stat-box {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.stat-number {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.stat-title {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+}
+
+.profile-menu-list {
+    padding: 0 var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.menu-item-modern {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background-color: var(--color-surface);
+    border: none;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-2);
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: var(--shadow-sm);
+}
+
+.menu-item-modern:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.menu-item-modern.highlight {
+    background: linear-gradient(135deg, var(--color-primary-very-light) 0%, rgba(32, 128, 133, 0.1) 100%);
+    border: 2px solid var(--color-primary);
+}
+
+.menu-icon-container {
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-primary-very-light);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.menu-item-modern.highlight .menu-icon-container {
+    background-color: var(--color-primary);
+}
+
+.menu-content {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.menu-subtitle {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.menu-chevron {
+    font-size: 24px;
+    color: var(--color-text-secondary);
+}
+
+.profile-footer-actions {
+    padding: 0 var(--space-4) var(--space-6);
+}
+
+.btn-signout {
+    width: 100%;
+    padding: var(--space-4);
+    background-color: transparent;
+    border: 2px solid var(--color-error);
+    color: var(--color-error);
+    border-radius: var(--radius-lg);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-signout:hover {
+    background-color: var(--color-error);
+    color: #fff;
+}
+
+/* Modal Styles for Profile Modals */
+.payment-method-item,
+.emergency-contact-item,
+.ride-preference-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3);
+    background-color: var(--color-bg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-2);
+}
+
+.payment-method-info,
+.contact-info,
+.ride-preference-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex: 1;
+}
+
+.payment-icon {
+    font-size: 24px;
+}
+
+.payment-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.payment-detail {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.badge-default {
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.contact-avatar {
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-primary-very-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.contact-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.contact-phone {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-bottom: 2px;
+}
+
+.contact-relationship {
+    font-size: 11px;
+    color: var(--color-primary);
+}
+
+.btn-icon-small {
+    width: 36px;
+    height: 36px;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.wallet-balance-display {
+    text-align: center;
+    padding: var(--space-6) var(--space-4);
+    background: linear-gradient(135deg, var(--color-primary-very-light) 0%, rgba(32, 128, 133, 0.1) 100%);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+}
+
+.balance-label {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.balance-amount {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.wallet-actions {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+}
+
+.wallet-history h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-3);
+    background-color: var(--color-bg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-2);
+}
+
+.transaction-desc {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.transaction-date {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.transaction-amount {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.transaction-amount.positive {
+    color: var(--color-success);
+}
+
+.transaction-amount.negative {
+    color: var(--color-error);
+}
+
+.loyalty-tier-display {
+    text-align: center;
+    padding: var(--space-6) var(--space-4);
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+}
+
+.tier-badge {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: var(--space-2);
+}
+
+.tier-points {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.loyalty-progress {
+    margin-bottom: var(--space-4);
+}
+
+.progress-label {
+    text-align: center;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-top: var(--space-2);
+}
+
+.loyalty-rewards h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+}
+
+.reward-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3);
+    background-color: var(--color-bg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-2);
+}
+
+.reward-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.reward-cost {
+    font-size: 12px;
+    color: var(--color-primary);
+}
+
+.settings-section h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+}
+
+.setting-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.setting-desc {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.preference-description {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
+}
+
+.ride-preference-icon {
+    font-size: 32px;
+}
+
+.ride-preference-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.ride-preference-desc {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}

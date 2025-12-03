@@ -1,0 +1,86 @@
+/* Mobile Driver Screen Map Height Fix - High Priority */
+/* This file contains aggressive overrides to ensure maps don't take full height on mobile */
+
+@media (max-width: 480px) {
+    /* Force driver screens to use flexbox layout */
+    .driver-home-screen,
+    .driver-pickup-screen,
+    .driver-driving-screen,
+    .driver-trip-screen {
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        overflow: hidden !important;
+    }
+
+    /* Limit map container height to 40% of viewport */
+    .driver-home-screen .driver-map-container,
+    .driver-pickup-screen .driver-map-container,
+    .driver-driving-screen .driver-map-container,
+    .driver-trip-screen .driver-map-container {
+        flex: 0 0 40vh !important;
+        height: 40vh !important;
+        max-height: 40vh !important;
+        min-height: 250px !important;
+        width: 100% !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    /* Ensure leaflet map respects container height */
+    .driver-home-screen .driver-map-container .leaflet-container,
+    .driver-pickup-screen .driver-map-container .leaflet-container,
+    .driver-driving-screen .driver-map-container .leaflet-container,
+    .driver-trip-screen .driver-map-container .leaflet-container {
+        height: 100% !important;
+        max-height: 40vh !important;
+        min-height: 0 !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+    }
+
+    /* Ensure bottom panel takes remaining space and is scrollable */
+    .driver-home-screen .driver-bottom-panel,
+    .driver-pickup-screen .driver-bottom-panel,
+    .driver-driving-screen .driver-bottom-panel,
+    .driver-trip-screen .driver-bottom-panel {
+        flex: 1 1 auto !important;
+        height: auto !important;
+        max-height: 60vh !important;
+        min-height: 0 !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    /* Ensure overlays stay within map bounds */
+    .driver-header-overlay,
+    .driver-top-nav {
+        position: absolute !important;
+        z-index: 1000 !important;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+    .driver-home-screen .driver-map-container,
+    .driver-pickup-screen .driver-map-container,
+    .driver-driving-screen .driver-map-container,
+    .driver-trip-screen .driver-map-container {
+        flex: 0 0 35vh !important;
+        height: 35vh !important;
+        max-height: 35vh !important;
+        min-height: 220px !important;
+    }
+
+    .driver-home-screen .driver-bottom-panel,
+    .driver-pickup-screen .driver-bottom-panel,
+    .driver-driving-screen .driver-bottom-panel,
+    .driver-trip-screen .driver-bottom-panel {
+        max-height: 65vh !important;
+    }
+}
